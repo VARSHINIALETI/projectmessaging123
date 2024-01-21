@@ -20,6 +20,14 @@ provider "azurerm" {
 
  features{}
 
+ client_id = var.secret1_value
+
+ client_secret = var.secret2_value
+
+ tenant_id = var.secret3_value
+
+ subscription_id = var.secret4_value
+
 }
 module "RG" {
 
@@ -60,15 +68,6 @@ module "NETWORKING" {
     network_security_rule_destination_address_prefix  = var.network_security_rule_destination_address_prefix
 
   
-
-  
-
-
-
-
-
-   
-   
 }
 
 module "STORAGE" {
@@ -81,12 +80,13 @@ module "STORAGE" {
   storage_account_replication_type         = var.storage_account_replication_type
   resource_group_location                  = var.resource_group_location
 
+  storage_queue_name                        = var.storage_queue_name
 
   mssql_server_name                         = var.mssql_server_name
   mssql_server_location                     = var.mssql_server_location
   mssql_server_version                      = var.mssql_server_version
-  mssql_server_administrator_login          = var.mssql_server_administrator_login
-  mssql_server_administrator_login_password = var.mssql_server_administrator_login_password
+  secret5_value                             = var.secret5_value
+  secret6_value                             = var.secret6_value
 
   mssql_database_name                       = var.mssql_database_name
   mssql_database_collation                  = var.mssql_database_collation
@@ -104,6 +104,11 @@ module "MESSAGING" {
   resource_group_name                       = var.resource_group_name
   resource_group_location                   = var.resource_group_location
 
+  event_subscription_name                   = var.event_subscription_name
+  rg_id                                     = module.RG.rg_id
+  account_id                                = module.STORAGE.account_id
+  storage_queue_name                        = var.storage_queue_name
+  
 
  servicebus_namespace_name                 = var.servicebus_namespace_name
  servicebus_namespace_location             = var.resource_group_location
@@ -188,9 +193,44 @@ module "SECURITYSERVICES" {
     nat_rule_collection_rule1_translated_port            = var.nat_rule_collection_rule1_translated_port
    
 
+   key_vault_name                                        = var.key_vault_name
+   soft_delete_retention_days                            = var.soft_delete_retention_days
+   purge_protection_enabled                              = var.purge_protection_enabled
+   sku_name                                              = var.sku_name
+   key_permissions                                       = var.key_permissions
+   secret_permissions                                    = var.secret_permissions
+   storage_permissions                                   = var.storage_permissions
+   secret1_name                                          = var.secret1_name
+   secret1_value                                         = var.secret1_value
+   secret2_name                                          = var.secret2_name
+   secret2_value                                         = var.secret2_value
+   secret3_name                                          = var.secret3_name
+   secret3_value                                         = var.secret3_value
+   secret4_name                                          = var.secret4_name
+   secret4_value                                         = var.secret4_value
+   object_id                                             = var.object_id
+   secret5_name                                          = var.secret5_name
+   secret5_value                                         = var.secret5_value
+   secret6_name                                          = var.secret6_name
+   secret6_value                                         = var.secret6_value
 
+
+ }
+
+
+
+
+
+module "ManagementGroup" {
+  source = "./modules/ManagementGroup" 
+
+     display_name = var.display_name
 
 }
+
+
+
+
 
 
 

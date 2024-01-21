@@ -4,6 +4,12 @@ resource "azurerm_storage_account" "storageaccount" {
   location                 = var.resource_group_location
   account_tier             = var.storage_account_tier
   account_replication_type = var.storage_account_replication_type
+  
+}
+
+resource "azurerm_storage_queue" "queuestorage" {
+  name                 = var.storage_queue_name
+  storage_account_name = var.storage_account_name
 }
 
 resource "azurerm_mssql_server" "mssqlserver" {
@@ -11,8 +17,8 @@ resource "azurerm_mssql_server" "mssqlserver" {
   resource_group_name          = var.resource_group_name
   location                     = var.mssql_server_location
   version                      = var.mssql_server_version
-  administrator_login          = var.mssql_server_administrator_login
-  administrator_login_password = var.mssql_server_administrator_login_password
+  administrator_login          = var.secret5_value
+  administrator_login_password = var.secret6_value
 }
 
 resource "azurerm_mssql_database" "mssql_database" {

@@ -5,6 +5,19 @@ resource "azurerm_eventgrid_topic" "eventgrid_topic" {
 }
 
 
+
+
+resource "azurerm_eventgrid_event_subscription" "eventsub" {
+  name  = var.event_subscription_name
+  scope = var.rg_id
+
+  storage_queue_endpoint {
+    storage_account_id = var.account_id
+    queue_name         = var.storage_queue_name
+  }
+}
+
+
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   name                = var.servicebus_namespace_name
   location            = var.resource_group_location

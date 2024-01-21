@@ -23,6 +23,14 @@ variable "storage_account_location" {
     type = string
 }
 
+
+variable "storage_queue_name" {
+description = "name of your storage queue"
+type = string
+}
+
+
+
 variable "mssql_server_name" {
     description = "name of your mssql server."
     type = string
@@ -31,20 +39,19 @@ variable "mssql_server_version" {
     description = "version of your mssql server."
     type = string
 }
-variable "mssql_server_administrator_login" {
-    description = "login credentials of your mssql server."
+
+variable "secret5_value" {
+    description = "secret 5"
     type = string
 }
-variable "mssql_server_administrator_login_password" {
-    description = "password credentials of your mssql server."
+variable "secret6_value" {
+    description = "secret 6"
     type = string
 }
 variable "mssql_server_location" {
     description = "location of your mssqlserver."
     type = string
 }
-
-
 variable "mssql_database_name" {
     description = "name of database name"
     type = string
@@ -70,3 +77,4 @@ variable "mssql_database_zone_redundant" {
     description = "zone redundant."
     type = bool
 }
+

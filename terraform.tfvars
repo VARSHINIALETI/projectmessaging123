@@ -19,15 +19,14 @@ network_security_rule_destination_address_prefix = "*"
 network_security_rule_source_port_range = "*"
 network_security_rule_destination_port_range = "*"
 
-storage_account_name = "mothistorageaccount2123"
+storage_account_name = "mothistorageaccount1435"
 storage_account_location = "West Central US"
 storage_account_tier = "Standard"
 storage_account_replication_type = "GRS"
+storage_queue_name = "storagequeue123"
 
 mssql_server_name = "mothi123-mssql-server"
 mssql_server_version = "12.0"
-mssql_server_administrator_login = "username"
-mssql_server_administrator_login_password = "Moukthika@123"
 mssql_server_location = "Central India"
 
 mssql_database_name           = "mothi-mssqldatabase"
@@ -39,6 +38,10 @@ mssql_database_zone_redundant = false
 
 eventgrid_topic_name    = "mothi-eventgrid-topic"
 eventgrid_location      = "West Central US"
+
+
+event_subscription_name                   = "eventsubscription1435"
+  
 
 servicebus_namespace_name                 = "mothi-servicebus-namespace"
 servicebus_namespace_location             =  "West-Central-US"
@@ -77,9 +80,6 @@ app_rule_collection_rule1_port2=443
 app_rule_collection_source_addresses=["10.0.0.1"]
 app_rule_collection_destination_fqdns=["*.microsoft.com"]
 
-
-
-
 network_rule_collection_name         = "networkrulecollection1"
 network_rule_collection_priority = 400
 network_rule_collection_action   = "Deny"
@@ -103,9 +103,29 @@ nat_rule_collection_rule1_destination_address = "192.168.1.1"
 nat_rule_collection_rule1_destination_ports   = ["80"]
 nat_rule_collection_rule1_translated_address  ="192.168.0.1"
 nat_rule_collection_rule1_translated_port     = "8080"
-   
-  
 
 
 
-  
+key_vault_name                                    = "mothi1435keyvault"
+soft_delete_retention_days                        = 7
+purge_protection_enabled                          = false
+sku_name                                          = "standard"
+key_permissions                                   =["Get",]
+secret_permissions                                =["Get", "Backup", "Delete", "List", "Purge", "Recover", "Restore", "Set", ]
+storage_permissions                               = ["Get",]
+secret1_name                                      = "clientID"
+secret1_value                                     = "246dd74b-338f-47b6-9438-87ae8bd99a01"
+secret2_name                                      = "clientsecret"
+secret2_value                                     = "7Oo8Q~Wj82KG.9sjHxpyA~HlXo-~.5kd-WPK8bYz"
+secret3_name                                      = "tenantID"
+secret3_value                                     = "47d7e33c-9155-404f-914e-6610aa428fcc"
+secret4_name                                      = "subscriptionID"
+secret4_value                                     = "91e9f238-396d-4de8-b851-c0465f790b4a"
+object_id                                         = "bdaf7280-c69f-4d52-89dd-a0631103d277"
+secret5_name                                      = "databaseusername"
+secret5_value                                     = "USERNAME"
+secret6_name                                      ="databasepassword"
+secret6_value                                     ="Moukthika@123"
+
+display_name                                      = "ParentManagementGroup"
+

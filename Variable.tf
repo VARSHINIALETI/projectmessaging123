@@ -106,18 +106,11 @@ variable "mssql_server_version" {
     description = "version of your sql server."
     type = string
 }
-variable "mssql_server_administrator_login" {
-    description = "login credentials of your sql server."
-    type = string
-}
-variable "mssql_server_administrator_login_password" {
-    description = "password credentials of your sql server."
-    type = string
-}
 variable "mssql_server_location" {
     description = "location of your sqlserver."
     type = string
 }
+
 
 
 variable "mssql_database_name" {
@@ -156,6 +149,18 @@ variable "eventgrid_location" {
     description = "location of your eventgrid"
     type = string
 }
+
+
+variable "storage_queue_name" {
+description = "name of your storage queue"
+type = string
+}
+
+variable "event_subscription_name" {
+description = "name of your event subscription" 
+type = string
+}
+
 
 
 variable "servicebus_namespace_name" {
@@ -361,7 +366,97 @@ variable "nat_rule_collection_rule1_translated_port" {
     description = "nat_rule_collection_rule1_translated_port"
     type = string
 }
- 
 
+
+variable "key_vault_name" {
+    description = "name of your keyvault"
+    type = string
+}
+variable "soft_delete_retention_days" {
+    description = "soft delete retention days"
+    type = number
+}
+variable "purge_protection_enabled" {
+    description = "enabled"
+    type = bool
+}
+variable "sku_name" {
+    description = "name of your sku"
+    type = string
+}
+variable "key_permissions" {
+    description = "key permissions"
+    type = list(string)
+}
+variable "secret_permissions" {
+    description = "secret permissions"
+    type = list(string)
+}
+variable "storage_permissions" {
+    description = "storage permissions"
+    type = list(string)
+}
+variable "secret1_name" {
+    description = "secret1_name"
+    type = string
+}
+variable "secret1_value" {
+    description = "secret1_value"
+    type = string
+}
+variable "secret2_name" {
+    description = "secret2_name"
+    type = string
+}
+variable "secret2_value" {
+    description = "secret2_value"
+    type = string
+}
+variable "secret3_name" {
+    description = "secret3_name"
+    type = string
+}
+variable "secret3_value" {
+    description = "secret3_value"
+    type = string
+}
+variable "secret4_name" {
+     description = "secret4_name"
+     type = string
+}
+variable "secret4_value" {
+    description = "secret4_value"
+    type = string
+}
+variable "object_id" {
+    description = "user id"
+    type = string
+}
+variable "secret5_name" {
+     description = "secret5_name"
+     type = string
+}
+variable "secret5_value" {
+    description = "secret5_value"
+    type = string
+}
+variable "secret6_name" {
+     description = "secret6_name"
+     type = string
+}
+variable "secret6_value" {
+    description = "secret6_value"
+    type = string
+}
+
+
+
+variable "display_name" {
+
+  type = string
+
+  description = "display name"
+
+}
 
 

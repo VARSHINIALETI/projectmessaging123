@@ -35,3 +35,25 @@ variable "servicebus_namespace_location" {
     description = "location of your servicebus namespace"
     type = string
 }
+
+
+
+variable "event_subscription_name" {
+description = "name of your event subscription" 
+type = string
+}
+variable "storage_queue_name" {
+    description = "name of your storage queue"
+    type = string
+}
+
+variable "account_id" {
+    description = "storage account id"
+  
+}
+
+variable "rg_id" {
+
+    description = "resource group id"
+  
+}
